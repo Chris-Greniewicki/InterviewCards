@@ -5,7 +5,10 @@ using System.Collections.Generic;
 var initialOptions = new List<string> {"Search Cards", "Create Card", "Exit"};
 var searchOptions = new List<string> { "Edit Card", "Delete Card", "Main Menu" };
 
-var path = "insertpathhere";
+var myDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+var ivCardsPath = Path.Combine(myDocumentsPath, "Interview Cards");
+var ivCardsFolder = Directory.CreateDirectory(ivCardsPath);
+string filePath = Path.Combine(ivCardsPath, "Interview Cards");
 
 string header = @"
 ==========================
@@ -79,7 +82,7 @@ void createCard()
     string interviewCard = string.Join(" | ", intervieweeName, interviewDate, caseNumber, interviewDetails);
     Console.WriteLine(interviewCard);
 
-    //File.AppendAllText(path, interviewCard);
+    File.AppendAllText(filePath, interviewCard + Environment.NewLine);
 }
 
 void editCard()
