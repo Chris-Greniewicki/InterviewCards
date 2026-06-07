@@ -66,7 +66,7 @@ void editCard()
 
 void deleteCard()
 {
-    //Delete interview card after selecting via search
+    //Delete existing interview card after selecting via search
 }
 //Clear console and display header
 void DrawHeader()
