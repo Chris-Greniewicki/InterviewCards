@@ -8,7 +8,7 @@ var searchOptions = new List<string> { "Edit Card", "Delete Card", "Main Menu" }
 var myDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 var ivCardsPath = Path.Combine(myDocumentsPath, "Interview Cards");
 var ivCardsFolder = Directory.CreateDirectory(ivCardsPath);
-string filePath = Path.Combine(ivCardsPath, "Interview Cards");
+string filePath = Path.Combine(ivCardsPath, "Interview Cards.txt");
 
 string header = @"
 ==========================
