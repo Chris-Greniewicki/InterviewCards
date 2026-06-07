@@ -37,6 +37,9 @@ void mainMenu()
 }
 
 void searchMenu()
+//Change this function to display list of currently existing interview cards - Option to edit/delete cards will be available once an individual card is opened
+//Need to determine how this data will be displayed at first before searching via filters
+//Need to determine filters to use for searching
 {
     DrawHeader();
     Console.WriteLine("What would you like to do?");
@@ -51,6 +54,20 @@ void searchMenu()
     }
 }
 
+void createCard()
+{
+    //Create new interview card
+}
+
+void editCard()
+{
+    //Modify existing interview card after selecting via search
+}
+
+void deleteCard()
+{
+    //Delete interview card after selecting via search
+}
 //Clear console and display header
 void DrawHeader()
 {
