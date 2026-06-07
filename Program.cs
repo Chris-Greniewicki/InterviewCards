@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
-var options = new List<string>{"Create Card", "Edit Card", "Delete Card"};
+var initialOptions = new List<string> {"Search Cards", "Create Card"};
+var searchOptions = new List<string> { "Edit Card", "Delete Card" };
 
 string header = @"
 ==========================
@@ -9,20 +11,54 @@ string header = @"
 ==========================
 ";
 
+mainMenu();
+
+//Functions
+
+void mainMenu()
+{
+    Console.Clear();
+    Console.WriteLine(header);
+    Console.WriteLine("What would you like to do?");
+    string selectedOption = SelectFromList(initialOptions);
+    if (selectedOption == "Search Cards")
+    {
+        searchMenu();
+    }
+    else if (selectedOption == "backspace")
+    {
+        Environment.Exit(0);
+    }
+    else
+    { 
+        Console.WriteLine($"You selected {selectedOption}!");
+    }
+}
+
+void searchMenu()
+{
+    Console.Clear();
+    Console.WriteLine(header);
+    Console.WriteLine("What would you like to do?");
+    string selectedOption = SelectFromList(searchOptions);
+    if (selectedOption == "backspace")
+    {
+        mainMenu();
+    }
+    else
+    {
+        Console.WriteLine($"You selected {selectedOption}!");
+    }
+}
+
+//Clear console and display header
 void DrawHeader()
 {
     Console.Clear();
     Console.WriteLine(header);
 }
 
-DrawHeader();
-
-Console.WriteLine("What would you like to do?");
-string selectedOption = SelectFromList(options);
-DrawHeader();
-Console.WriteLine($"You selected {selectedOption}!");
-
-
+//Display options as selectable
 static string SelectFromList(List<string> options)
 {
     int selectedIndex = 0;
@@ -58,11 +94,13 @@ static string SelectFromList(List<string> options)
         {
             selectedIndex++;
         }
-
+        else if (key == ConsoleKey.Backspace)
+        {
+            return "backspace";
+        }
         Console.SetCursorPosition(0, Console.CursorTop - options.Count);
     } while (key != ConsoleKey.Enter);
 
     Console.CursorVisible = true;
     return options[selectedIndex];
 }
-//Switch this over to a police field interview card system where we ask the user a series of questions and then print out a report at the end.
