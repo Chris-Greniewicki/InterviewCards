@@ -24,7 +24,7 @@ void mainMenu()
     {
         searchMenu();
     }
-    else if (selectedOption == "Exit")
+    else if (selectedOption == "Exit" || selectedOption == "backspace")
     {
         Console.WriteLine("Exiting Program...");
         Environment.Exit(0);
@@ -41,7 +41,7 @@ void searchMenu()
     DrawHeader();
     Console.WriteLine("What would you like to do?");
     string selectedOption = SelectFromList(searchOptions);
-    if (selectedOption == "Main Menu")
+    if (selectedOption == "Main Menu" || selectedOption == "backspace")
     {
         mainMenu();
     }
