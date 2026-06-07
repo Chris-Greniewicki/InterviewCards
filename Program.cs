@@ -2,8 +2,8 @@
 using System.IO;
 using System.Collections.Generic;
 
-var initialOptions = new List<string> {"Search Cards", "Create Card"};
-var searchOptions = new List<string> { "Edit Card", "Delete Card" };
+var initialOptions = new List<string> {"Search Cards", "Create Card", "Exit"};
+var searchOptions = new List<string> { "Edit Card", "Delete Card", "Main Menu" };
 
 string header = @"
 ==========================
@@ -17,31 +17,31 @@ mainMenu();
 
 void mainMenu()
 {
-    Console.Clear();
-    Console.WriteLine(header);
+    DrawHeader();
     Console.WriteLine("What would you like to do?");
     string selectedOption = SelectFromList(initialOptions);
     if (selectedOption == "Search Cards")
     {
         searchMenu();
     }
-    else if (selectedOption == "backspace")
+    else if (selectedOption == "Exit")
     {
+        Console.WriteLine("Exiting Program...");
         Environment.Exit(0);
     }
     else
-    { 
+    {
+        DrawHeader();
         Console.WriteLine($"You selected {selectedOption}!");
     }
 }
 
 void searchMenu()
 {
-    Console.Clear();
-    Console.WriteLine(header);
+    DrawHeader();
     Console.WriteLine("What would you like to do?");
     string selectedOption = SelectFromList(searchOptions);
-    if (selectedOption == "backspace")
+    if (selectedOption == "Main Menu")
     {
         mainMenu();
     }
