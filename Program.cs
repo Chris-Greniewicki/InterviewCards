@@ -5,6 +5,8 @@ using System.Collections.Generic;
 var initialOptions = new List<string> {"Search Cards", "Create Card", "Exit"};
 var searchOptions = new List<string> { "Edit Card", "Delete Card", "Main Menu" };
 
+var path = "insertpathhere";
+
 string header = @"
 ==========================
 ===Field Interview Card===
@@ -28,6 +30,10 @@ void mainMenu()
     {
         Console.WriteLine("Exiting Program...");
         Environment.Exit(0);
+    }
+    else if (selectedOption == "Create Card")
+    {
+        createCard();
     }
     else
     {
@@ -57,6 +63,23 @@ void searchMenu()
 void createCard()
 {
     //Create new interview card
+    DrawHeader();
+    Console.WriteLine("Please enter interviewee name");
+    string intervieweeName = Console.ReadLine();
+    Console.WriteLine("Interviewee: " + intervieweeName);
+    Console.WriteLine("Please enter the current date as mm/dd/yyyy");
+    string interviewDate = Console.ReadLine();
+    Console.WriteLine("Date: " + interviewDate);
+    Console.WriteLine("Please enter related Case Number");
+    string caseNumber = Console.ReadLine();
+    Console.WriteLine("Case Number: " + caseNumber);
+    Console.WriteLine("Please enter interview details");
+    string interviewDetails = Console.ReadLine();
+    Console.WriteLine("Interview Details: " + interviewDetails);
+    string interviewCard = string.Join(" | ", intervieweeName, interviewDate, caseNumber, interviewDetails);
+    Console.WriteLine(interviewCard);
+
+    //File.AppendAllText(path, interviewCard);
 }
 
 void editCard()
