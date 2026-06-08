@@ -52,14 +52,16 @@ void searchMenu()
 {
     DrawHeader();
     var cardList = File.ReadAllLines(filePath);
+    var displayList = new List<string>();
     foreach (var line in cardList)
     {
-        var datas = line.Split("|");
-        var cardData = new List<string> { $"{datas[0]} | {datas[1]} | {datas[2]}" };
-        Console.WriteLine($"{datas[0]} | {datas[1]} | {datas[2]}");
+        var sections = line.Split("|");
+        displayList.Add($"{sections[0]} | {sections[1]} | {sections[2]}");
     }
+    displayList.Add("-------------------------------");
+    displayList.AddRange(searchOptions);
     Console.WriteLine("What would you like to do?");
-    string selectedOption = SelectFromList(searchOptions);
+    string selectedOption = SelectFromList(displayList);
     if (selectedOption == "Main Menu" || selectedOption == "backspace")
     {
         mainMenu();
