@@ -69,7 +69,21 @@ void searchMenu()
     }
     else
     {
-        Console.WriteLine($"You selected {selectedOption}!");
+        var index = displayList.IndexOf(selectedOption);
+        displayCard(index);
+        //Console.WriteLine($"You selected {index}!");
+    }
+}
+
+void displayCard(int index)
+{
+    //Display selected card for review
+    var cardList = File.ReadAllLines(filePath);
+    DrawHeader();
+    var test = cardList[index].Split(" | ");
+    foreach (var line in test)
+    {
+        Console.WriteLine(line);
     }
 }
 
