@@ -46,7 +46,7 @@ void mainMenu()
 }
 
 void searchMenu()
-//Make selecting cards display a visual interview card
+//ADDRESS ISSUE where if there are no cards yet, error occurs
 //Add Option to edit/delete cards once an individual card is opened
 //Need to determine how this data will be displayed at first before searching via filters
 //Need to determine filters to use for searching
@@ -78,6 +78,7 @@ void searchMenu()
 void displayCard(int index)
 {
     //Display selected card for review
+    //ADDRESS ISSUE - Make text start new line at end of word instead of mid-word
     var cardList = File.ReadAllLines(filePath);
     DrawHeader();
     var test = cardList[index].Split(" | ");
@@ -92,17 +93,17 @@ void createCard()
     //Create new interview card
     DrawHeader();
     Console.WriteLine("Please enter interviewee name");
-    string intervieweeName = Console.ReadLine();
-    Console.WriteLine("Interviewee: " + intervieweeName);
+    string intervieweeName = "Interviewee Name: " + Console.ReadLine();
+    Console.WriteLine(intervieweeName);
     Console.WriteLine("Please enter the current date as mm/dd/yyyy");
-    string interviewDate = Console.ReadLine();
-    Console.WriteLine("Date: " + interviewDate);
+    string interviewDate = "Interview Date: " + Console.ReadLine();
+    Console.WriteLine(interviewDate);
     Console.WriteLine("Please enter related Case Number");
-    string caseNumber = Console.ReadLine();
-    Console.WriteLine("Case Number: " + caseNumber);
+    string caseNumber = "Case Number: " + Console.ReadLine();
+    Console.WriteLine(caseNumber);
     Console.WriteLine("Please enter interview details");
-    string interviewDetails = Console.ReadLine();
-    Console.WriteLine("Interview Details: " + interviewDetails);
+    string interviewDetails = "Interview Details: " + Console.ReadLine();
+    Console.WriteLine(interviewDetails);
     string interviewCard = string.Join(" | ", intervieweeName, interviewDate, caseNumber, interviewDetails);
     Console.WriteLine(interviewCard);
 
