@@ -47,6 +47,7 @@ void mainMenu()
 
 void searchMenu()
 //ADDRESS ISSUE where if there are no cards yet, error occurs
+//ADDRESS ISSUE - Ensure all cards align together in list regardless of info length within reason
 //Add Option to edit/delete cards once an individual card is opened
 //Need to determine how this data will be displayed at first before searching via filters
 //Need to determine filters to use for searching
