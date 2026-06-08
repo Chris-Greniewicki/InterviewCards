@@ -46,7 +46,8 @@ void mainMenu()
 }
 
 void searchMenu()
-//Make Interview Cards Selectable - Option to edit/delete cards will be available once an individual card is opened
+//Make selecting cards display a visual interview card
+//Add Option to edit/delete cards once an individual card is opened
 //Need to determine how this data will be displayed at first before searching via filters
 //Need to determine filters to use for searching
 {
