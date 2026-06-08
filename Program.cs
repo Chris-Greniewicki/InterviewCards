@@ -71,7 +71,6 @@ void searchMenu()
     {
         var index = displayList.IndexOf(selectedOption);
         displayCard(index);
-        //Console.WriteLine($"You selected {index}!");
     }
 }
 
