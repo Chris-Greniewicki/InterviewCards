@@ -51,6 +51,13 @@ void searchMenu()
 //Need to determine filters to use for searching
 {
     DrawHeader();
+    var cardList = File.ReadAllLines(filePath);
+    foreach (var line in cardList)
+    {
+        var datas = line.Split("|");
+        var cardData = new List<string> { $"{datas[0]} | {datas[1]} | {datas[2]}" };
+        Console.WriteLine($"{datas[0]} | {datas[1]} | {datas[2]}");
+    }
     Console.WriteLine("What would you like to do?");
     string selectedOption = SelectFromList(searchOptions);
     if (selectedOption == "Main Menu" || selectedOption == "backspace")
@@ -83,6 +90,7 @@ void createCard()
     Console.WriteLine(interviewCard);
 
     File.AppendAllText(filePath, interviewCard + Environment.NewLine);
+    mainMenu();
 }
 
 void editCard()
