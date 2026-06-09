@@ -69,6 +69,11 @@ void searchMenu()
     {
         mainMenu();
     }
+    else if (selectedOption == "-------------------------------")
+    {
+        //ADDRESS ISSUE - This bar should do nothing on selection, preferably not even be selectable, just be a separator between menus
+        mainMenu();
+    }
     else
     {
         var index = displayList.IndexOf(selectedOption);
@@ -88,6 +93,18 @@ void displayCard(int index)
         Console.WriteLine(line);
     }
     string selectedOption = SelectFromList(displayOptions);
+    if (selectedOption == "Edit Card")
+    {
+        editCard();
+    }
+    else if (selectedOption == "Delete Card")
+    {
+        deleteCard();
+    }
+    else if (selectedOption == "Main Menu" || selectedOption == "backspace")
+    {
+        mainMenu();
+    }
 }
 
 void createCard()
