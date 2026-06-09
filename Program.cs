@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 var initialOptions = new List<string> {"Search Cards", "Create Card", "Exit"};
 var searchOptions = new List<string> { "Edit Card", "Delete Card", "Main Menu" };
+var displayOptions = new List<string> { "Edit Card", "Delete Card", "Main Menu" };
 
 var myDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 var ivCardsPath = Path.Combine(myDocumentsPath, "Interview Cards");
@@ -86,6 +87,7 @@ void displayCard(int index)
     {
         Console.WriteLine(line);
     }
+    string selectedOption = SelectFromList(displayOptions);
 }
 
 void createCard()
