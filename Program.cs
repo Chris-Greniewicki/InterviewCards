@@ -99,7 +99,7 @@ void displayCard(int index)
     }
     else if (selectedOption == "Delete Card")
     {
-        deleteCard();
+        deleteCard(index);
     }
     else if (selectedOption == "Main Menu" || selectedOption == "backspace")
     {
@@ -135,7 +135,7 @@ void editCard(int index)
     //Modify existing interview card after selecting via search
 }
 
-void deleteCard()
+void deleteCard(int index)
 {
     //Delete existing interview card after selecting via search
 }
