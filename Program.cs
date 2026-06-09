@@ -87,8 +87,8 @@ void displayCard(int index)
     //ADDRESS ISSUE - Make text start new line at end of word instead of mid-word
     var cardList = File.ReadAllLines(filePath);
     DrawHeader();
-    var test = cardList[index].Split(" | ");
-    foreach (var line in test)
+    var lines = cardList[index].Split(" | ");
+    foreach (var line in lines)
     {
         Console.WriteLine(line);
     }
