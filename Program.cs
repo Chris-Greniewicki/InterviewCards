@@ -95,7 +95,7 @@ void displayCard(int index)
     string selectedOption = SelectFromList(displayOptions);
     if (selectedOption == "Edit Card")
     {
-        editCard();
+        editCard(index);
     }
     else if (selectedOption == "Delete Card")
     {
@@ -130,7 +130,7 @@ void createCard()
     mainMenu();
 }
 
-void editCard()
+void editCard(int index)
 {
     //Modify existing interview card after selecting via search
 }
